@@ -24,6 +24,10 @@ import java.util.Set;
  */
 public class TwoNumberSum {
     
+    private TwoNumberSum() {
+        throw new IllegalStateException("Utility Class");
+    }
+    
     /**
      * Brute force solution with 2 inner loops <br/>
      * If both loop has same indices, then ignore. <br/>
@@ -36,7 +40,7 @@ public class TwoNumberSum {
      * @return if any two numbers matches the expected sum return those 2 numbers
      *         else empty array
      */
-    public static Integer[] bruteForceSolution1(Integer[] input, int expectedSum) {
+    public static Integer[] bruteForceSolution1(Integer[] input, Integer expectedSum) {
         
         int inputArrayLength = input.length;
         for (int i = 0; i < inputArrayLength; i++) {
