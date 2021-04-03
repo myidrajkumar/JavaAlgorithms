@@ -32,8 +32,8 @@ public class TwoNumberSum {
      * Brute force solution with 2 inner loops <br/>
      * If both loop has same indices, then ignore. <br/>
      * <br/>
-     * Time Complexity: O(N^2) - Since iterating twice <br/>
-     * Space Complexity: O(1) - Since new array will be containing 2 numbers
+     * <b>Time Complexity:</b> O(N^2) - Since iterating twice <br/>
+     * <b>Space Complexity:</b> O(1) - Since new array will be containing 2 numbers
      * 
      * @param input       Given numbers array
      * @param expectedSum the expected sum
@@ -63,8 +63,8 @@ public class TwoNumberSum {
      * next element <br/>
      * The operations performed will be less <br/>
      * <br/>
-     * Time Complexity: O(N^2) - Since iterating twice <br/>
-     * Space Complexity: O(1) - Since new array will be containing 2 numbers
+     * <b>Time Complexity:</b> O(N^2) - Since iterating twice <br/>
+     * <b>Space Complexity:</b> O(1) - Since new array will be containing 2 numbers
      * 
      * @param input       Given numbers array
      * @param expectedSum the expected sum
@@ -93,9 +93,10 @@ public class TwoNumberSum {
      * <li>Whether subtracted element present in the list or not</li>
      * <li>This will be performed for all the elements index</li>
      * </ul>
-     * Time Complexity: O(N^2) - Though iterating twice only, the operations
+     * <b>Time Complexity:</b> O(N^2) - Though iterating twice only, the operations
      * performed are in inner loop <br/>
-     * Space Complexity: O(1) - Since new array will be containing 2 numbers <br/>
+     * <b>Space Complexity:</b> O(1) - Since new array will be containing 2 numbers
+     * <br/>
      * <br/>
      * 
      * @param input       Given numbers array
@@ -122,8 +123,8 @@ public class TwoNumberSum {
      * or not from the saved values <br/>
      * This solution is better than earlier <br/>
      * <br/>
-     * Time Complexity: O(N) - To check all elements <br/>
-     * Space Complexity: O(N) - Saving in memory
+     * <b>Time Complexity:</b> O(N) - To check all elements <br/>
+     * <b>Space Complexity:</b> O(N) - Saving in memory
      * 
      * @param input       Given numbers array
      * @param expectedSum the expected sum
@@ -157,8 +158,8 @@ public class TwoNumberSum {
      * <li>Continue this until expected sum matches or left equals to right</li>
      * </ol>
      * <br/>
-     * Time Complexity: O(NLogN) - Sorting elements <br/>
-     * Space Complexity: O(1) - Only result is stored
+     * <b>Time Complexity:</b> O(NLogN) - Sorting elements <br/>
+     * <b>Space Complexity:</b> O(1) - Only result is stored
      * 
      * @param input       Given numbers array
      * @param expectedSum the expected sum

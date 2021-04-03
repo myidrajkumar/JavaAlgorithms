@@ -47,4 +47,22 @@ class ValidateSubsequenceTest {
         Assertions.assertTrue(ValidateSubsequence.bruteForceSolution2(sequence, subSequence),
                 "The result is not matching");
     }
+    
+    @Test
+    void testBruteForceSolution3_NormalCase() {
+        
+        Integer[] sequence = new Integer[] { 5, 1, 22, 25, 6, -1, 8, 10 };
+        Integer[] subSequence = new Integer[] { 1, 6, -1, 10 };
+        Assertions.assertTrue(ValidateSubsequence.bruteForceSolution3(sequence, subSequence),
+                "The result is not matching");
+    }
+    
+    @Test
+    void testBruteForceSolution4_NormalCase() {
+        
+        Integer[] sequence = new Integer[] { 5, 1, 22, 25, 6, -1, 8, 10 };
+        Integer[] subSequence = new Integer[] { 1, 6, -1, 10 };
+        Assertions.assertTrue(ValidateSubsequence.bruteForceSolution4(sequence, subSequence),
+                "The result is not matching");
+    }
 }
