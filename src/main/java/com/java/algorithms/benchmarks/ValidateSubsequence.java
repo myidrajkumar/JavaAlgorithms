@@ -1,4 +1,4 @@
-package com.rajkumar.algorithms.benchmarks;
+package com.java.algorithms.benchmarks;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,21 +23,13 @@ import org.openjdk.jmh.runner.options.TimeValue;
 @Fork(3)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Benchmark)
-public class TwoNumberSum {
+public class ValidateSubsequence {
     
-    public static void main(String[] args) throws RunnerException {
-        
-        Options opts = new OptionsBuilder().include("TwoNumberSum").warmupIterations(5).warmupTime(TimeValue.seconds(1))
-                .measurementIterations(5).measurementTime(TimeValue.seconds(1)).mode(Mode.AverageTime).forks(3).build();
-        
-        new Runner(opts).run();
-    }
-    
-    private static Integer[] input = { 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,
-            117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137,
-            138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158,
-            159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179,
-            180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199,
+    private static Integer[] sequence = { 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115,
+            116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136,
+            137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157,
+            158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178,
+            179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199,
             
             201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221,
             222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242,
@@ -65,38 +57,45 @@ public class TwoNumberSum {
             
             3, 5, -4, 8, 11, 1, -1, 6 };
     
-    @Benchmark
-    public Integer[] findTheBruteForceSolution1() {
+    private static Integer[] subSequence = { 101, 136 };
+    private static int totalSeqToCreate = 10;
+    private static Integer[] tripledSubSequence = new Integer[sequence.length * totalSeqToCreate];
+    
+    static {
+        for (int i = 0; i < sequence.length; i++) {
+            int temp = i * 3;
+            tripledSubSequence[temp] = tripledSubSequence[temp + 1] = tripledSubSequence[temp + 2] = sequence[i];
+        }
         
-        int tagetSum = 10;
-        return com.rajkumar.algorithms.TwoNumberSum.bruteForceSolution1(input, tagetSum);
     }
     
     @Benchmark
-    public Integer[] findTheBruteForceSolution2() {
-        
-        int tagetSum = 10;
-        return com.rajkumar.algorithms.TwoNumberSum.bruteForceSolution2(input, tagetSum);
+    public boolean findTheBruteForceSolution1() {
+        return com.java.algorithms.ValidateSubsequence.bruteForceSolution1(tripledSubSequence, subSequence);
     }
     
     @Benchmark
-    public Integer[] findingDifferenceBruteForceSolution3() {
-        
-        int tagetSum = 10;
-        return com.rajkumar.algorithms.TwoNumberSum.findingDifferenceBruteForceSolution3(input, tagetSum);
+    public boolean findTheBruteForceSolution2() {
+        return com.java.algorithms.ValidateSubsequence.bruteForceSolution2(tripledSubSequence, subSequence);
     }
     
     @Benchmark
-    public Integer[] findingDifferenceSolution4() {
-        
-        int tagetSum = 10;
-        return com.rajkumar.algorithms.TwoNumberSum.findingDifferenceSolution4(input, tagetSum);
+    public boolean findTheBruteForceSolution3() {
+        return com.java.algorithms.ValidateSubsequence.bruteForceSolution3(tripledSubSequence, subSequence);
     }
     
     @Benchmark
-    public Integer[] byCursorMovement() {
-        
-        int tagetSum = 10;
-        return com.rajkumar.algorithms.TwoNumberSum.byCursorMovement(input, tagetSum);
+    public boolean findTheBruteForceSolution4() {
+        return com.java.algorithms.ValidateSubsequence.bruteForceSolution4(tripledSubSequence, subSequence);
     }
+    
+    public static void main(String[] args) throws RunnerException {
+        
+        Options opts = new OptionsBuilder().include("ValidateSubsequence").warmupIterations(5)
+                .warmupTime(TimeValue.seconds(1)).measurementIterations(5).measurementTime(TimeValue.seconds(1))
+                .mode(Mode.AverageTime).forks(3).build();
+        
+        new Runner(opts).run();
+    }
+    
 }

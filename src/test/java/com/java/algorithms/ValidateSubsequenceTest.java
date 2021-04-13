@@ -1,4 +1,4 @@
-package com.rajkumar.algorithms;
+package com.java.algorithms;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

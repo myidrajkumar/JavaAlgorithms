@@ -1,4 +1,4 @@
-package com.rajkumar.algorithms.benchmarks;
+package com.java.algorithms.benchmarks;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,9 +23,17 @@ import org.openjdk.jmh.runner.options.TimeValue;
 @Fork(3)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Benchmark)
-public class SortedSquaredArray {
+public class TwoNumberSum {
     
-    private static int[] sequence = { 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,
+    public static void main(String[] args) throws RunnerException {
+        
+        Options opts = new OptionsBuilder().include("TwoNumberSum").warmupIterations(5).warmupTime(TimeValue.seconds(1))
+                .measurementIterations(5).measurementTime(TimeValue.seconds(1)).mode(Mode.AverageTime).forks(3).build();
+        
+        new Runner(opts).run();
+    }
+    
+    private static Integer[] input = { 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,
             117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137,
             138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158,
             159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179,
@@ -58,22 +66,37 @@ public class SortedSquaredArray {
             3, 5, -4, 8, 11, 1, -1, 6 };
     
     @Benchmark
-    public int[] findTheBruteForceSolution3() {
-        return com.rajkumar.algorithms.SortedSquaredArray.bruteForceSolution3(sequence);
+    public Integer[] findTheBruteForceSolution1() {
+        
+        int tagetSum = 10;
+        return com.java.algorithms.TwoNumberSum.bruteForceSolution1(input, tagetSum);
     }
     
     @Benchmark
-    public int[] findTheOptimalSolution1() {
-        return com.rajkumar.algorithms.SortedSquaredArray.optimalSolution(sequence);
+    public Integer[] findTheBruteForceSolution2() {
+        
+        int tagetSum = 10;
+        return com.java.algorithms.TwoNumberSum.bruteForceSolution2(input, tagetSum);
     }
     
-    public static void main(String[] args) throws RunnerException {
+    @Benchmark
+    public Integer[] findingDifferenceBruteForceSolution3() {
         
-        Options opts = new OptionsBuilder().include("SortedSquaredArray").warmupIterations(5)
-                .warmupTime(TimeValue.seconds(1)).measurementIterations(5).measurementTime(TimeValue.seconds(1))
-                .mode(Mode.AverageTime).forks(3).build();
-        
-        new Runner(opts).run();
+        int tagetSum = 10;
+        return com.java.algorithms.TwoNumberSum.findingDifferenceBruteForceSolution3(input, tagetSum);
     }
     
+    @Benchmark
+    public Integer[] findingDifferenceSolution4() {
+        
+        int tagetSum = 10;
+        return com.java.algorithms.TwoNumberSum.findingDifferenceSolution4(input, tagetSum);
+    }
+    
+    @Benchmark
+    public Integer[] byCursorMovement() {
+        
+        int tagetSum = 10;
+        return com.java.algorithms.TwoNumberSum.byCursorMovement(input, tagetSum);
+    }
 }

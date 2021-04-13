@@ -1,4 +1,4 @@
-package com.rajkumar.algorithms.benchmarks;
+package com.java.algorithms.benchmarks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,27 +58,27 @@ public class TournamentWinner {
     
     @Benchmark
     public String findTheBruteForceSolution1() {
-        return com.rajkumar.algorithms.TournamentWinner.bruteForceSolution1(matchesList, matchWinningStatusList);
+        return com.java.algorithms.TournamentWinner.bruteForceSolution1(matchesList, matchWinningStatusList);
     }
     
     @Benchmark
     public String findTheBruteForceSolution2() {
-        return com.rajkumar.algorithms.TournamentWinner.bruteForceSolution2(matchesList, matchWinningStatusList);
+        return com.java.algorithms.TournamentWinner.bruteForceSolution2(matchesList, matchWinningStatusList);
     }
     
     @Benchmark
     public String findTheBruteForceSolution3() {
         
-        return com.rajkumar.algorithms.TournamentWinner.bruteForceSolution3(matchesList, matchWinningStatusList);
+        return com.java.algorithms.TournamentWinner.bruteForceSolution3(matchesList, matchWinningStatusList);
     }
     
     @Benchmark
     public String findTheBruteForceSolution4() {
-        return com.rajkumar.algorithms.TournamentWinner.bruteForceSolution4(matchesList, matchWinningStatusList);
+        return com.java.algorithms.TournamentWinner.bruteForceSolution4(matchesList, matchWinningStatusList);
     }
     
     @Benchmark
     public String findTheBruteForceSolution5() {
-        return com.rajkumar.algorithms.TournamentWinner.bruteForceSolution5(matchesList, matchWinningStatusList);
+        return com.java.algorithms.TournamentWinner.bruteForceSolution5(matchesList, matchWinningStatusList);
     }
 }

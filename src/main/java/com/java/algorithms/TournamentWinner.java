@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rajkumar.algorithms;
+package com.java.algorithms;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

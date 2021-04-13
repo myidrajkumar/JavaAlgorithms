@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.rajkumar.algorithms;
+package com.java.algorithms;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
@@ -99,7 +99,7 @@ public class SortedSquaredArray {
      */
     public static int[] optimalSolution(int[] input) {
         int[] result = new int[input.length];
-        int low = 0, high = input.length - 1;
+        int low = 0, high = input.length - 1; // NOSONAR
         
         for (int i = input.length - 1; i >= 0; i--) {
             if (Math.abs(input[low]) > Math.abs(input[high])) {
